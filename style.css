@@ -1,0 +1,221 @@
+body::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #454545;
+    border-radius: 100px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+    overflow: overlay;
+}
+
+body {
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    background-color: #000000;
+}
+
+* {
+    background-color: transparent;
+    font-family: 'Arimo', sans-serif;
+    color: #ffffff;
+}
+
+.flex2 {
+    height: 0px;
+    padding-bottom: 12px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:not(.blogbtn),
+.gitbtn {
+    border: 0;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 2vh;
+}
+
+.gitbtn {
+    font-size: 3vh;
+    width: 55px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    padding-top: 15px;
+}
+
+header {
+    border: 0;
+    padding-bottom: 5px;
+    background-color: #202020;
+}
+
+.mainheader {
+    height: 35px;
+}
+
+footer {
+    border: 0;
+    display: none;
+}
+
+@media (min-width: 992px) {
+    footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        background-color: #202020;
+    }
+}
+
+.flex,
+.flex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+a:not(.tabBtn) {
+    color: #a0a0ff;
+}
+
+a:not(.tabBtn):hover {
+    color: #c0c0ff;
+}
+
+.tabBtn {
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tabBtn:hover {
+    text-shadow: #CCC 0px 0px 4px;
+}
+
+.centered {
+    text-align: center;
+    height: 100%;
+    line-height: 200%;
+}
+
+.gitbtn:hover {
+    opacity: 0.8;
+}
+
+.maindesc {
+    width: 50%;
+    font-size: 2vw;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.flex3 {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    height: 84vh;
+    line-height: 100px;
+}
+
+.flex4 {
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+
+.blogbtn {
+    vertical-align: middle;
+    margin: auto;
+    display: table-cell;
+    text-align: center;
+    background-color: #6060ff;
+    width: 35%;
+    height: 8%;
+    font-size: 1.6rem;
+    border: 0;
+    border-radius: 5px;
+}
+
+.blogbtn:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.blogbtn:hover:not(:disabled) {
+    box-shadow: 0 5px 15px #6060ff;
+}
+
+.mainimage {
+    border: 0;
+    margin: 5% 5%;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5vh rgb(127, 85, 49);
+    width: 512px;
+    max-height: 512px;
+}
+
+.maindesc {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.flex4 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 2% 5%;
+}
+
+.blogbtn {
+    margin: 2% 5%;
+}
+
+@media (min-width: 1300px) and (min-height: 680px) {
+    .mainimage {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1299px) or (max-height: 679px) {
+    .flex4 {
+        width: 100%;
+        margin: 0;
+    }
+  
+    .maindesc {
+        text-align: center;
+        width: 60%;
+    }
+}
+
+#disabledhref {
+    pointer-events: none;
+    cursor: text;
+    opacity: 0.5;
+    text-shadow: none;
+}
