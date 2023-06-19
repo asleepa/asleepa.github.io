@@ -9,17 +9,6 @@
   <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
 </head>
 
-<script>
-  const queryString = window.location.search;
-  if (queryString != null && queryString != "") {
-    const urlParams = new URLSearchParams(queryString);
-    const inviteParam = urlParams.get('invite');
-    if (typeof(inviteParam) == "string") {
-      window.open(`https://discord.gg/${inviteParam}`, '_self')
-    }
-  }
-</script>
-
 <html>
 <header>
   <div class="flex">
