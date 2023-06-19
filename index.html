@@ -5,9 +5,20 @@
 <meta content="#F0CE0A" data-react-helmet="true" name="theme-color" />
 
 <head>
-  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link type="text/css" rel="stylesheet" href="style.css"/>
   <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
 </head>
+
+<script>
+  const queryString = window.location.search;
+  if (queryString != null && queryString != "") {
+    const urlParams = new URLSearchParams(queryString);
+    const inviteParam = urlParams.get('invite');
+    if (typeof(inviteParam) == "string" && inviteParam.length() > 0) {
+      window.open(`https://discord.gg/${inviteParam}`, '_self')
+    }
+  }
+</script>
 
 <html>
 <header>
