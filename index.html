@@ -14,7 +14,7 @@
   if (queryString != null && queryString != "") {
     const urlParams = new URLSearchParams(queryString);
     const inviteParam = urlParams.get('invite');
-    if (typeof(inviteParam) == "string" && inviteParam.length() > 0) {
+    if (typeof(inviteParam) == "string") {
       window.open(`https://discord.gg/${inviteParam}`, '_self')
     }
   }
