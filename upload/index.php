@@ -1,4 +1,5 @@
 <?php
+include 'filename';
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["imgUpload"]["name"]);
 $uploadOk = 1;
