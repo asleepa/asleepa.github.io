@@ -2,28 +2,33 @@
 <script src="src/jquery-3.7.0.min.js"></script>
 <div id="content"></div>
 
-<html>
+<html style="height: 100%; overflow: hidden;">
+    <head>
+        <input id="btnResume" type="button" value="Click anywhere.." 
+        onclick="" style="
+            height: 100vh;
+            width: 100%;
+            background: none;
+            border: none;
+            font-size: x-large;
+            color: #fff;
+            overflow: hidden;
+        " 
+    />
+    </head>
     <body style="
         background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
         background-color: #000000;
+        height: 100%;
+        overflow: hidden;
     ">
-        <input id="btnResume" type="button" value="Click anywhere.." 
-            onclick="" style="
-                height: 100%;
-                width: 100%;
-                background: none;
-                border: none;
-                font-size: x-large;
-                color: #fff;
-            " 
-        />
     </body>
 </html>
 
 <script>
     $(document).ready(function() {
-        $("#btnResume").on("click", function() {
+        document.onclick = function(event) {
             $("#content").load("page.html");
-        });
+        }
     });
 </script>
