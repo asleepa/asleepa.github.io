@@ -26,9 +26,13 @@
 </html>
 
 <script>
+    var loaded = false;
     $(document).ready(function() {
         document.onclick = function(event) {
-            $("#content").load("page.html");
+            if (!loaded) {
+                loaded = true;
+                $("#content").load("page.html");
+            }
         }
     });
 </script>
