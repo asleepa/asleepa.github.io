@@ -1,4 +1,5 @@
 const OGInvite = ""
+const OGInvite = ""
 const queryString = window.location.search;
 var openingInvite = false
 if (queryString != null && queryString != "") {
