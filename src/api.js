@@ -1,4 +1,4 @@
-require("dotenv").config()
+import {config} from "dotenv"
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const apiType = urlParams.get("api_type")
