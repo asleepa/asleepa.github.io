@@ -20,8 +20,8 @@ jobs:
         npm install
         npm run-script build
       env:
-        REACT_APP_APIKey: ${{ secrets.REACT_APP_APIKey }}
-        REACT_APP_APISecret: ${{ secrets.REACT_APP_APISecret }}
+        API_ACCESS_KEY: ${{ secrets.API_ACCESS_KEY }}
+        ARCANIUM_KEY: ${{ secrets.ARCANIUM_KEY }}
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
