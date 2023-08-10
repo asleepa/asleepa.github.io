@@ -27334,12 +27334,8 @@ const urlParams = new URLSearchParams(queryString);
 const apiType = urlParams.get("api_type")
 const accessKey = urlParams.get("access_key")
 
-console.log(apiType)
-console.log(accessKey)
 if (typeof(apiType) == "string" && apiType == "arcanium_key") {
-    console.log("api type correct")
     if (typeof(accessKey) == "string" && accessKey == process.env.API_ACCESS_KEY) {
-        console.log("access key correct")
         const element = document.getElementById("api")
         element.innerHTML = process.env.ARCANIUM_KEY
     }
