@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asleepa File Link</title>
+
+    <script>
+        const queryString = window.location.search;
+        let videoString = "";
+
+        if (queryString !== null && queryString !== "") {
+            const urlParams = new URLSearchParams(queryString);
+            const videoParam = urlParams.get('v') || urlParams.get('video') || urlParams.get('id');
+            if (typeof(videoParam) === "string") {
+                videoString = videoParam;
+            }
+        }
+
+        if (videoString !== "") {
+            document.head.innerHTML += `
+                <meta property="og:title" content="${videoString}.mp4" />
+                <meta property="og:image" content="https://cdn-cf-east.streamable.com/image/${videoString}.jpg" />
+                <meta name="theme-color" content="#617a9b">
+                <meta name="twitter:card" content="summary_large_image">
+            `;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%;">
+        <iframe allow="fullscreen" allowfullscreen height="100%" 
+                src="https://streamable.com/e/" + videoString + "?nocontrols=1" 
+                width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+    </div>
+</body>
+
+</html>
