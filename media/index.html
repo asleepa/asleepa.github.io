@@ -5,57 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asleepa File Link</title>
-
-    <script>
-        const queryString = window.location.search;
-        let videoString = "";
-
-        if (queryString !== null && queryString !== "") {
-            const urlParams = new URLSearchParams(queryString);
-            const videoParam = urlParams.get('v') || urlParams.get('video') || urlParams.get('id');
-            if (typeof (videoParam) === "string") {
-                videoString = videoParam;
-            }
-        }
-
-        if (videoString !== "") {
-            const ogTitle = document.createElement('meta');
-            ogTitle.setAttribute('property', 'og:title');
-            ogTitle.setAttribute('content', `${videoString}.mp4`);
-
-            const ogImage = document.createElement('meta');
-            ogImage.setAttribute('property', 'og:image');
-            ogImage.setAttribute('content', `https://cdn-cf-east.streamable.com/image/${videoString}.jpg`);
-
-            const themeColor = document.createElement('meta');
-            themeColor.setAttribute('name', 'theme-color');
-            themeColor.setAttribute('content', '#617a9b');
-
-            const twitterCard = document.createElement('meta');
-            twitterCard.setAttribute('name', 'twitter:card');
-            twitterCard.setAttribute('content', 'summary_large_image');
-
-            document.head.appendChild(ogTitle);
-            document.head.appendChild(ogImage);
-            document.head.appendChild(themeColor);
-            document.head.appendChild(twitterCard);
-
-            const iframeContainer = document.createElement('div');
-            iframeContainer.style = "position:relative; width:100%; height:0px; padding-bottom:56.250%;";
-
-            const iframe = document.createElement('iframe');
-            iframe.allow = "fullscreen";
-            iframe.allowfullscreen = true;
-            iframe.height = "100%";
-            iframe.width = "100%";
-            iframe.style = "border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;";
-            iframe.src = `https://streamable.com/e/${videoString}`;
-
-            iframeContainer.appendChild(iframe);
-            document.body.appendChild(iframeContainer);
-        }
-    </script>
 </head>
 
-<body></body>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const queryString = window.location.search;
+            let videoString = "";
+
+            if (queryString !== null && queryString !== "") {
+                const urlParams = new URLSearchParams(queryString);
+                const videoParam = urlParams.get('v') || urlParams.get('video') || urlParams.get('id');
+                if (typeof (videoParam) === "string") {
+                    videoString = videoParam;
+                }
+            }
+
+            if (videoString !== "") {
+                const ogTitle = document.createElement('meta');
+                ogTitle.setAttribute('property', 'og:title');
+                ogTitle.setAttribute('content', `${videoString}.mp4`);
+
+                const ogImage = document.createElement('meta');
+                ogImage.setAttribute('property', 'og:image');
+                ogImage.setAttribute('content', `https://cdn-cf-east.streamable.com/image/${videoString}.jpg`);
+
+                const themeColor = document.createElement('meta');
+                themeColor.setAttribute('name', 'theme-color');
+                themeColor.setAttribute('content', '#617a9b');
+
+                const twitterCard = document.createElement('meta');
+                twitterCard.setAttribute('name', 'twitter:card');
+                twitterCard.setAttribute('content', 'summary_large_image');
+
+                document.head.appendChild(ogTitle);
+                document.head.appendChild(ogImage);
+                document.head.appendChild(themeColor);
+                document.head.appendChild(twitterCard);
+
+                const iframeContainer = document.createElement('div');
+                iframeContainer.style = "position:relative; width:100%; height:0px; padding-bottom:56.250%;";
+
+                const iframe = document.createElement('iframe');
+                iframe.allow = "fullscreen";
+                iframe.allowfullscreen = true;
+                iframe.height = "100%";
+                iframe.width = "100%";
+                iframe.style = "border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;";
+                iframe.src = `https://streamable.com/e/${videoString}`;
+
+                iframeContainer.appendChild(iframe);
+                document.body.appendChild(iframeContainer);
+            }
+        });
+    </script>
+</body>
+
 </html>
