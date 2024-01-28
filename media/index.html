@@ -28,9 +28,7 @@
             max-height: 100%;
         }
     </style>
-</head>
 
-<body>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const queryString = window.location.search;
@@ -45,13 +43,6 @@
             }
 
             if (videoString !== "") {
-                document.head.innerHTML += `
-                    <meta property="og:title" content="${videoString}.mp4" />
-                    <meta property="og:image" content="https://cdn-cf-east.streamable.com/image/${videoString}.jpg" />
-                    <meta name="theme-color" content="#617a9b">
-                    <meta name="twitter:card" content="summary_large_image">
-                `;
-
                 const iframeContainer = document.createElement('div');
                 iframeContainer.style = "position:relative; width:50%; height:0px; padding-bottom:56.250%; transform: translate(50%, 10%);";
 
@@ -61,15 +52,48 @@
                 iframe.height = "50%";
                 iframe.width = "50%";
                 iframe.style = "border:none; width:100%; height:50%; position:absolute; left:0%; top:0%; overflow:hidden; border-image: linear-gradient(#662d8c, #ed1e79) 30; border-width: 4px; border-style:solid;";
-                iframe.src = `https://streamable.com/e/${videoString}`;
 
-                iframeContainer.appendChild(iframe);
-                document.body.appendChild(iframeContainer);
+                document.head.innerHTML += `
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:description" content="Asleepa File Link" />
+                    <meta content="Asleepa File Link" property="og:description" />
+                    <meta content="#617a9b" data-react-helmet="true" name="theme-color" />
+                    <meta name="theme-color" content="#617a9b">
+                `
+
+                // Load streamable
+                if (videoString.length == 6) {
+                    document.head.innerHTML += `
+                        <meta property="og:title" content="asleepa.github.io (${videoString}.mp4)" />
+                        <meta property="og:video" content="https://streamable.com/e/${videoString}" />
+                        <meta name="twitter:title" content="asleepa.github.io (${videoString}.mp4)" />
+                    `;
+
+                    iframe.src = `https://streamable.com/e/${videoString}`;
+
+                    iframeContainer.appendChild(iframe);
+                    document.body.appendChild(iframeContainer);
+                }
+
+                // Load movie
+                else if (videoString.length > 6) {
+                    document.head.innerHTML += `
+                        <meta property="og:title" content="asleepa.github.io (movie.mp4)" />
+                        <meta property="og:video" content="https://streambucket.net/?play=${videoString}" />
+                        <meta name="twitter:title" content="asleepa.github.io (movie.mp4)" />
+                    `;
+
+                    iframe.src = `https://streambucket.net/?play=${videoString}`;
+
+                    iframeContainer.appendChild(iframe);
+                    document.body.appendChild(iframeContainer);
+                }
             } else {
                 document.body.innerHTML += '404 not found'
             }
         });
     </script>
-</body>
+</head>
 
+<body> </body>
 </html>
