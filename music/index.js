@@ -1,4 +1,5 @@
 // Mythium Archive: https://archive.org/details/mythium/
+import Plyr from 'plyr';
 
 jQuery(function ($) {
     'use strict'
