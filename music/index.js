@@ -1,12 +1,11 @@
 // Mythium Archive: https://archive.org/details/mythium/
+import Plyr from 'plyr';
 
 jQuery(function ($) {
     'use strict'
     var supportsAudio = !!document.createElement('audio').canPlayType;
     if (supportsAudio) {
         // initialize plyr
-        import Plyr from 'plyr';
-        
         var player = new Plyr('#audio1', {
             controls: [
                 'restart',
