@@ -1,5 +1,5 @@
 // Mythium Archive: https://archive.org/details/mythium/
-let { Plyr } = require('plyr');
+import Plyr from 'plyr';
 
 jQuery(function ($) {
     'use strict'
